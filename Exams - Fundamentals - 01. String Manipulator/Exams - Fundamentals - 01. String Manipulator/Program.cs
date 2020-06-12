@@ -34,24 +34,28 @@ namespace PetkoSoftUniFundamentals
                 switch (change[0])
                 {
                     case "Translate":
-                        entry.Replace(change[1], change[2]);
+                        entry = entry.Replace(change[1], change[2]);
                         Console.WriteLine(entry);
                         break;
                     case "Includes":
-                        Console.WriteLine(entry.Contains(change[1]));
+                        bool doesIt = entry.Contains(change[1]);
+                        Console.WriteLine(doesIt);
                         break;
                     case "Start":
-                        Console.WriteLine(entry.StartsWith(change[1]));
+                        bool doesIt2 = entry.StartsWith(change[1]);
+                        Console.WriteLine(doesIt2);
                         break;
                     case "Lowercase":
-                        Console.WriteLine(entry.ToLower());
+                        entry = entry.ToLower();
+                        Console.WriteLine(entry);
                         break;
                     case "FindIndex":
                         int index = entry.LastIndexOf(change[1]);
                         Console.WriteLine(index);
                         break;
                     case "Remove":
-                        entry.Remove(int.Parse(change[1]), int.Parse(change[2]));
+                        entry = entry.Remove(int.Parse(change[1]), int.Parse(change[2]));
+                        Console.WriteLine(entry);
                         break;
                     default:
                         Console.WriteLine("Contact Support");
